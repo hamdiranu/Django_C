@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block Title %}MENTEE{% endblock %}
+{% block tambahan %}{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="wrap-home--content">
+    <div class="our_mentee">
+        <h3>Our Mentee</h3>
+    </div>
+    {% for mentee in mentees%}
+    <div class="container isi_mentee">
+        <div class="row">
+            <div class="col-4 steve">
+                <img src="{% static ''%}{{mentee.Gambar}}">
+            </div>
+            <div class="col-8 steve_word">
+                <h4>{{mentee.Name}}</h4>
+                <p>{{mentee.Quote}}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+</div>
+{% endblock %}

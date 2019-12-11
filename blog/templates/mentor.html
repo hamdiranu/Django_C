@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block Title %}MENTOR{% endblock %}
+{% block tambahan %}{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="wrap-home--content">
+    <div class="our_mentee">
+        <h3>Our Mentor</h3>
+    </div>
+    {% for mentor in mentors%}
+    <div class="container isi_mentee">
+        <div class="row">
+            <div class="col-4 andreas">
+                <img src="{% static ''%}{{mentor.Gambar}}">
+            </div>
+            <div class="col-8 andreas_word">
+                <h4>{{mentor.Nama}}</h4>
+                <h5>{{mentor.Experience}}</h5>
+                <h6>{{mentor.Quote}}</h6>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
