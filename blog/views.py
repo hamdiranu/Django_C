@@ -33,3 +33,6 @@ def formupdate(request):
     # blogs = Blog.objects.all()
     return redirect('/blog')
     
+def detail(request, blog_id):
+    blogs = get_object_or_404(Blog,pk = blog_id)
+    return render(request, 'baca_selengkapnya.html',{'blogs': blogs})
